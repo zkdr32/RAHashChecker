@@ -1,5 +1,7 @@
 # RAHashChecker
 
+Release download [here](https://github.com/zkdr32/RAHashChecker/releases)
+
 A Windows desktop tool for checking whether your ROMs are compatible with [RetroAchievements](https://retroachievements.org) (RA), and for tidying up the ones that aren't.
 
 Point it at a folder of ROMs, pick the console, and it hashes every file the way RA expects, then tells you which games are supported, which have achievements, and which don't match anything in RA.
