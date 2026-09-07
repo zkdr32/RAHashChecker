@@ -1,0 +1,37 @@
+﻿<Window
+    x:Class="RAHashChecker.HelpWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RAHashChecker"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Help Window"
+    Width="500"
+    Height="200"
+    MinWidth="450"
+    MinHeight="200"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="Expander">
+            <Setter Property="Margin" Value="5,5,5,0" />
+        </Style>
+    </Window.Resources>
+    <StackPanel Margin="5">
+        <Expander Header="Where to get RAHasher">
+            <TextBlock Text="Click the link provided in the program, or look it up online. Note that if you don't use Nixxou's version, it will erroneously assume the version of RAHasher you give it will be able to handle .7z and .rar files." TextWrapping="Wrap" />
+        </Expander>
+        <Expander Header="How to add files">
+            <TextBlock Text="You can drag them individually to the 'Drag Files Here' area. Or you can add a folder by clicking that area instead. You can add folders by dragging them to that spot, too." TextWrapping="Wrap" />
+        </Expander>
+        <Expander Header="What does the Hash Files + Search RetroAchievements button do?">
+            <TextBlock Text="First, it pulls a list of all valid hashes from RetroAchievements for the selected system. Then it uses RAHasher to hash your files. Then, it compares the two lists.&#10;&#10;If a file isn't found, it checks the list that RA returned for the closest name-based match (trimming parentheses, brackets, etc.), to give you an idea of what RA might be looking for. That's when you select the file, and click Find Expected Filename For Selected File, which uses the most closely matched file hash and ID to give you what RA expects. This should help you figure out what version of the file you should use, or perhaps it needs to be patched first before RA will let you get achievements for it." TextWrapping="Wrap" />
+        </Expander>
+        <Expander Header="Right clicking a file lets you 'Add to Extras'?">
+            <TextBlock Text="This creates an Extras folder, and puts the selected ROM in it. This is for cleaning up your library - put the ROMs you don't plan on 'fixing' in the Extra folder so it doesn't clog up your list. Or you could use it to put ROMs that you DO plan on fixing." TextWrapping="Wrap" />
+        </Expander>
+        <Expander Header="What is 'Find Expected Filename for Selected File'?">
+            <TextBlock Text="If, after hashing and searching RA, a close match is found (using the name, not the hash), this uses the close match to search RA for the exact name of the file (and sometimes, a patch that is required for the file) so you can then find a correct copy of the game. For example, Alundra (USA) is not valid for RA - it requires Alundra (USA) (Rev. 1).&#10;&#10;If you want to find expected filenames for ALL close matches, click the button right below it." TextWrapping="Wrap" />
+        </Expander>
+    </StackPanel>
+</Window>
