@@ -1,0 +1,31 @@
+name: Build App
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build and Publish
+      run: dotnet publish --configuration Release --no-restore --output publish_output
+      
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: RAHashChecker-Build
+        path: publish_output/
